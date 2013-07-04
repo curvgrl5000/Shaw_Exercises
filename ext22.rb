@@ -52,9 +52,9 @@ puts #blank line
 
 age = 35 + 5
 puts "I am #{age}"
-puts "cow" + "girl" # this is an example of concatentation, which literally means a value will be added together
+puts "cow" + "girl" # this is an example of concatentation, which literally means a value will be added together like so: 'cowgirl'
 la = "la dee da "
-puts la + la + la # the value of the variable will be output into a string
+puts la + la + la # the value of the variable 'la' will be output into a string: 'la dee da la dee da la dee da'
 
 #  - , minus sign subtracts!
 puts 100 - 60 
@@ -63,7 +63,7 @@ puts 100 - 60
 puts 100 / 2
 
 # 'puts' method : prints the string and the results of the integers and operators: 100.00 divided by 3
-puts "100.0 / 3?", 100.0 / 3  #Using a floating number will give you a full decimal response and that's something worth controlling. This is different than a floating number which rounds the output
+puts "100.0 / 3?", 100.0 / 3  #Using a floating number will give you a full decimal response and that's something worth controlling. This is different than a standard integaer; which rounds the output. Check out these descriptions here: http://www.ruby-doc.org/docs/ProgrammingRuby/html/tut_stdtypes.html
 
 #  *,  asterisk multiplies!
 puts 10 * 10
@@ -95,7 +95,7 @@ puts #blank line
 
 # VARIABLES are also STRINGS because they are made up of the same set of alpha-numeric bytes.
 # Just remember that a Variable is a storage location which references a value, but a STRING is not a VARIABLE
-# and the ruby evaluator will simply read the data as is.
+# and the ruby evaluator will simply read the data as is in a string.
 
 # A variable name is the usual way to reference the stored value; this separation of name and content allows the name to be used independently of the exact information it represents.
 
@@ -153,14 +153,14 @@ puts #blank
 formatting_two_strings = "%s %s"
 puts formatting_two_strings % ["that thing", "that thingy"]
 formatter = "%s"
-puts formatter % ["nope, you dope! "] * 10
+puts formatter % ["nope, can't touch that! "] * 10
 
 # Another way to work with variables is to pass in a variable number of arguments or capture multiple arguments in a single parameter. You can do this by placing an asterisk before the name of the parameter. 
 def good_recipes(arg1, *rest)
   "The meal will be #{arg1} and #{rest.join(', ')}"
 end
 
-puts good_recipes("yummy") # since I don't provide another variable, it doesn't pass the value.
+puts good_recipes("yummy") # since I don't provide another variable, it doesn't pass another value.
 puts good_recipes("flavorfull" , "delicious" , "plus nutricious" , "plus a time saver.") # here the arguments are slotted and all of them show up.
 puts #blank
 
@@ -287,12 +287,12 @@ puts "So you said #{response}, and gave the reason: #{explain}."
 # Require: File level thing
 # Include: Language level thing
 
-#The require method does what include does in most other programming languages: run another file. It also tracks what you've required in the past and won't require the same file twice. To run another file without this added functionality, you can use the load method.
+# The require method does what include does in most other programming languages: run another file. It also tracks what you've required in the past and won't require the same file twice. To run another file without this added functionality, you can use the load method.
 #The include method takes all the methods from another module and includes them into the current module. This is a language-level thing as opposed to a file-level thing as with require. The include method is the primary way to "extend" classes with other modules (usually referred to as mix-ins). For example, if your class defines the method "each", you can include the mixin module Enumerable and it can act as a collection. This can be confusing as the include verb is used very differently in other languages.
 
-#So if you just want to use a module, rather than extend it or do a mix-in, then you'll want to use require.
+# So if you just want to use a module, rather than extend it or do a mix-in, then you'll want to use require.
 
-#Oddly enough, Ruby's require is analogous to C's include, while Ruby's include is almost nothing like C's include.
+# Oddly enough, Ruby's require is analogous to C's include, while Ruby's include is almost nothing like C's include.
 
 # EX:
 require 'open-uri'
@@ -334,7 +334,7 @@ puts "Your first variable is: #{first}"
 puts "Your second variable is: #{second}"
 puts "Your third variable is: #{third}"
 
-#Now in the command line, the first argument labeled $0, will be slotted as the first parameter,
+# Now in the command line, the first argument labeled $0, will be slotted as the first parameter,
 # and in this case its the name of the script.
 # Then typing in the arguments will then be what gets populated in all the parameters respectively.
 
