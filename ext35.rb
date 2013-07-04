@@ -1,4 +1,4 @@
-# EXERCISE 34: BRANCHES AND FUNCTIONS        
+# EXERCISE 35: BRANCHES AND FUNCTIONS        
 
 def prompt()
   print "> "
