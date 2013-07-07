@@ -1,5 +1,11 @@
 # EXT 27 THE TRUTH TERMS   
-# In Ruby we have the following terms (characters and phrases) for determining if something is "true" or "false". Logic on a computer is all about seeing if some combination of these characters and some variables is True at that point in the program.
+# In Ruby we have the following terms (characters and phrases) for determining if something is "true" or "false". Logic on a computer is all about seeing if some combination of these characters and some variables is True at that point in the program. 
+
+########################################################################################################################
+########################################################################################################################
+# A GREAT RESOURCE FOR MEMORIZATION: http://memorize.com/ruby-truth-tables/hezwx
+########################################################################################################################
+########################################################################################################################
 
 # and
 # or
@@ -11,7 +17,7 @@
 # true
 # false
 
-#You actually have run into these characters before, but maybe not the phrases. The phrases (and, or, not) actually work the way you expect them to, just like in English.
+# You actually have run into these characters before, but maybe not the phrases. The phrases (and, or, not) actually work the way you expect them to, just like in English.
 
 # The Truth Tables
 # We will now use these characters to make the truth tables you need to memorize.

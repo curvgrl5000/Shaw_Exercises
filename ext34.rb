@@ -1,4 +1,6 @@
 # Exercise 34: ACCESSING ELEMENTS OF ARRAYS 
+# Arrays are pretty useful, but unless you can get at the things in them they aren't all that great. You can already go through the elements of a list in order, but what if you want say, the 5th element? You need to know how to access the elements of an array. Here's how you would access the first element of an array:
+
 
 animals = ['bear', 'python', 'peacock',
 'kangaroo', 'whale', 'platypus']
@@ -17,7 +19,9 @@ puts animals.first
 puts animals.last
 puts animals.sort
 puts animals.length  
-
+puts #blank  
+puts ":::\\:::\\" *10
+puts #blank
 
 
 ###############################################################################################

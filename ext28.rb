@@ -4,8 +4,7 @@
 
 # Some programming languages make a syntactical distinction between the "equals" of assignment (e.g. a = 1 assigns the value 1 to the variable "a") and the "equals" of comparison (if a == 1 then ...). Other languages determine which is meant from context.
 
-#Sometimes, particularly in object-oriented programming, the comparison raises questions of data types and inheritance, equality and identity. It is often necessary to distinguish between: 
-# two objects with different datatypes both related to another datatype, e.g. an orange and a lemon, both being citrus fruit 
+#Sometimes, particularly in object-oriented programming, the comparison raises questions of data types and inheritance, equality and identity. It is often necessary to distinguish between: two objects with different datatypes both related to another datatype, e.g. an orange and a lemon, both being citrus fruit 
 # two different objects of the same type, e.g. two hands
 # two objects being equal but distinct, e.g. two $10 banknotes
 # two different references to the same object, e.g. two nicknames for the same person

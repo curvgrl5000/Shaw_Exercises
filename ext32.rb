@@ -1,17 +1,25 @@
-# EXERCISE 32: LOOPS AND ARRAYS    
+# EXERCISE 32: LOOPS AND ARRAYS
+# You should now be able to do some programs that are much more interesting. If you have been keeping up, you should realize that now you can combine all the other things you have learned with if-statements and boolean expressions to make your programs do smart things.
 
+# However, programs also need to do repetitive things very quickly. We are going to use a for-loop in this exercise to build and print various arrays. When you do the exercise, you will start to figure out what they are. I won't tell you right now. You have to figure it out.
+
+# Before you can use a for-loop, you need a way to store the results of loops somewhere. The best way to do this is with an array. An array is a container of things that are organized in order. It's not complicated; you just have to learn a new syntax. First, there's how you make an array:    
+
+# Okay so first the array:
 the_count = [1, 2, 3, 4, 5]
 fruits = ['apples', 'oranges', 'pears', 'apricots']
 change = [1, 'pennies', 2, 'dimes', 3, 'quarters']
 
-#this first kind of for-Loop goes through an array
-for number in the_count
-  puts "This is count #{number}"
+#this first kind of for-Loop goes through an array loaded in the variable 'the-count'
+for number in the_count 
+  puts "This is count #{number}" # Okay so the interesting thing here is that it prints out the sentence for each of the numbers. This becomes useful if the sentence must be printed over and over again.
 end
 
-# same as above, but using a block instead
-fruits.each do |fruit|
-  puts "A fruit of type: #{fruit}"
+# Same as above, but using a block instead. Here 'each' is an iterator, a method supported by collections. 
+# Collections are objects that store a group of data members and could be an array or a ruby hash.
+# In Ruby, arrays and hashes can be termed collections. Iterators return all the elements of a collection, one after the other.
+fruits.each do |fruit| # Executes code for each element in the fruit collection. 'do' places it into the block |fruit|
+  puts "A fruit of type: #{fruit}" #prints out the string and variable for each item in the array.
 end
 
 #also we can go through mixed arrays too
@@ -25,14 +33,17 @@ elements = []
 # then use a range object to do 0 to 5 counts
 for i in (0..5)
   puts "Adding #{i} to the list."
- # push is a method that arrays understand. Append — Pushes the given object(s) on to the end of this array. This expression returns the array itself, so several appends may be chained together. See also #pop for the opposite effect.
+
+# push is a method that arrays understand. Append — Pushes the given object(s) on to the end of this array. This expression returns the array itself, so several appends may be chained together. See also #pop for the opposite effect.
  elements.push(i)
 end
 
-# now we can puts them out too
+# now we can print them out too
 for i in elements
   puts "Element was: #{i}"
 end
+puts #blank  
+puts "^^^///>>>///<<<///" *5
 puts #blank
 
 ###############################################################################################
@@ -45,8 +56,9 @@ puts #blank
 #########################################################################################
 
 # Extra Credit
-# Make new parts of the game and change what decisions people can make. Expand the game out as much as you can before it gets ridiculous.
+# Find the Ruby documentation on arrays and read about them. What other operations can you do to arrays besides push?
 
+# A Hairstyle Example
 # a trailing comma is ignored
 top_picks = [1, 2, 3, 4, 5]
 hairstyles = ['bob', 'wave', 'braid', 'ponytail', 'pixie-cut', 'twist']
@@ -57,7 +69,7 @@ puts shoes[1]
 puts shoes[2]
 puts shoes[3]
 puts shoes[4]
-puts shoes[5] = 'flip-flops'
+puts shoes[5] = 'flip-flops' #We can further identify the variable with a string.
 puts shoes[6] = 'platforms'  
 puts shoes[7] = 'slippers'
 puts shoes[8] = ['red shoes', 'tennies', 'black boots']   
