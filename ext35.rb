@@ -22,7 +22,6 @@ def gold_room()
   end
 end
 
-
 def bear_room()
   puts "There is a bear here."
   puts "The bear has a bunch of honey."
@@ -91,7 +90,6 @@ start()
 
 ###############################################################################################
 
-# Extra Credit
 # Extra Credit
 # Draw a map of the game and how you flow through it.
 # Fix all of your mistakes, including spelling mistakes.
