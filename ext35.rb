@@ -20,13 +20,10 @@ def gold_room()  # defines the method 'gold_room' and sets up the logic...
   if how_much < 50                            # if variable 'how_much' is less than the integer 50
     puts "Nice, you're not greedy, you win!"  # then it prints the string
     Process.exit(0)                           # module 'Process'is a collection of methods to manipulate a 
-  end                                         # process, and 'exit' is a public method that initiates the 
+                                              # process, and 'exit' is a public method that initiates the 
                                               # termination of a Ruby script.  
                                               # The optional parameter, (0) is used to return a status code to         
                                               # invokes the environment.
-      
-    
-     
   else                                       # Or                                
     dead("You greedy bastard!")              # variable 'dead' puts string. Checkout how the method 'dead' is defined below.
   end
@@ -63,13 +60,13 @@ end
 def cthulhu_room()                                                # defines the method 'cthulhu'
   puts "Here you see the great evil Cthulhu."                     # prints the string
   puts "He, it, whatever stares at you and you go insane."        # prints the string
-  puts "Do you flee for your life or eat your head?"
+  puts "Do you flee for your life or eat it's head?"
 
   prompt; next_move = gets.chomp          # prints the prompt, then 'next_move' is again refreshed by console input
 
   if next_move.include? "flee"            # the conditional logic begins with 'if' and asks with the 'include' method if the string 
                                           # 'flee' has been input from the console and passed to the var 'next_move' 
-    start()                               # if the answer is true, then 'start' method is instantiated
+    start()                               # if the answer is 'flee' then the 'start' method begins the game form  the start
   elsif next_move.include? "head"         # ELSE, the 'include' method asks if the string has been passed  to the var 'next_move'
     dead("Well that was tasty!")          # and again if the answer is yes, then print the var 'dead' and it's 1st argument
   else                                    # FINALLY or ELSE if the latter arguments don't return a match then...
@@ -100,15 +97,16 @@ end
                                                                               
 start()                                   # starts is a public method that initiates the program
 
-############################################################################################################################################
+###################################################################################################################################
 
 # Extra Credit
 # Draw a map of the game and how you flow through it.
 # Fix all of your mistakes, including spelling mistakes.
 # Write comments for the functions you do not understand. Remember RDoc comments?
 
-
-
-# Extra Credit   THIS IS WHERE I STOPPED>>>> GO AHEAD AND PRINT THE PROGRAM OUT AGAIN AND ADD TO IT.....
+###################################################################################################################################
+# Extra Credit 
 # Add more to the game. What can you do to both simplify and expand it.
-# The gold_room has a weird way of getting you to type a number. What are all the bugs in this way of doing it? Can you make it better than just checking if "1" or "0" are in the number? Look at how to_i() works for clues.
+# The gold_room has a weird way of getting you to type a number. What are all the bugs in this way of doing it? Can you make it better than just checking if "1" or "0" are in the number? Look at how to_i() works for clues. 
+
+## CHECK OUT: ext35_extra credit.rb
