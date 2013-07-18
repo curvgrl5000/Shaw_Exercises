@@ -18,15 +18,15 @@ puts "alias :::\\:::\\" *8
 
 # Ex: One
 class Blowdryer
-   def on
-     puts "The blowdryer is on!"
-   end
+  def on
+    puts "The blowdryer is on!"
+  end
  
-   alias :start :on
- end
+  alias :start :on
+end
  
- blow = Blowdryer.new
- blow.start # same as m.on
+blow = Blowdryer.new
+blow.start # same as .on
  
 # Ex: Two
 class Oven
@@ -59,11 +59,11 @@ class <<hot
   end
 end                      
 
-  hot.on # Displays extra message
+hot.on # Displays extra message
 
-  hot2 = Oven.new
-  hot2.on # Does not display extra message
-   
+hot2 = Oven.new
+hot2.on # Does not display extra message
+puts #blank   
 
 ########################################################################################
 puts "and :::\\:::\\" *8
@@ -75,6 +75,7 @@ a = 10
 b = 20
 (a and b) # is true
 (a && b)  # is true
+puts # blank
 
 ########################################################################################
 puts "BEGIN :::\\:::\\" *8
@@ -85,6 +86,7 @@ puts "Hey! Check out how this sentence is printing after the string in the BEGIN
 BEGIN {
   puts "And this string will print first, when the program runs"
 }
+puts # blank
 
 ########################################################################################
 puts "begin :::\\:::\\" *8
@@ -97,16 +99,17 @@ temp = 97.5
 begin
   print "It's going to be " + temp.to_s + " Fahrenheit today. "
   puts "And it's getting hotter every day."
-  temp += 0.2  # this controls how the numbers get calculated forward.
+  temp += 0.3  # this controls how the numbers get calculated forward.
 end while temp < 98.2 
+puts #blank line
 
 # Ex: 2
 begin  
-    puts 'I am before the raise statement in this code block.'  
-    raise 'Shoot, an error has occurred, I am the raise statement.'  
-    puts 'I am after the raise statement.'  
+  puts 'I am before the raise statement in this code block.'  
+  raise 'Shoot, an error has occurred, I am the raise statement.'  
+  puts 'I am after the raise statement.'  
 rescue  
-    puts 'Whoa, I am rescued.'  
+  puts 'Whoa, I am rescued.'  
 end  
 puts 'I am after the begin block.'
 puts #blank line
@@ -115,14 +118,17 @@ puts #blank line
 a = 1
 b = 2
 c = 3
+
 begin  
   raise "Testing #{a}, #{b}, #{c}"  
 rescue Exception => e  
   puts e.message  
   puts e.backtrace.inspect #  prints the 'Exception'...
-                           # 'backtrace' method returns an array of strings, each containing the 'filename:line No in the method
+                           # 'backtrace' method returns an array of strings, 
+                           # each containing the 'filename:line No in the method
                            # 'inspect' method returns the exception’s class name
 end
+puts #blank line
 
 # What's between that begin and end?
 # begin...end (what is called block in other languages) may sometimes be referred to simply as what it is, # i.e. an expression (which may in turn contain other expressions - an expression is simply something that has a return value) in Ruby. Some references will still call it a begin/end block, or a code block, adding somewhat to the confusion
@@ -137,19 +143,20 @@ puts "break :::\\:::\\" *8
 
 # Ex: 1
 i=0
-	while i<3
-	  print i, "\n"  # '\n' returns a newline. This symbol is part of ruby's backslash notation, see below for more info.
-	  break
-	end
+while i<3
+	print i, "\n"  # '\n' returns a newline. This symbol is part of ruby's backslash notation.
+	break
+end
 
 # Ex: 2  	
 six = (1..10).each {|i| break i if i > 5}
 puts six  # 6
+puts # blank
 	  
 ########################################################################################
 puts "case :::\\:::\\" *8
 # 6. case
-#Compares the expression specified by case and that specified by when using the === operator and 
+# Compares the expression specified by case and that specified by when using the === operator and 
 # executes the code of the 'when' clause that matches.
 
 # The expression specified by the 'when' clause is evaluated as the left operand. 
@@ -161,15 +168,15 @@ puts "case :::\\:::\\" *8
 $age =  5
 case $age
 when 0 .. 2   # Here we use a rane
-    puts "baby girl"
+  puts "baby girl"
 when 3 .. 6
-    puts "little girl"
+  puts "little girl"
 when 7 .. 12
-    puts "girl"
+  puts "girl"
 when 13 .. 18
-    puts "young woman"
+  puts "young woman"
 else
-    puts "female adult"
+  puts "female adult"
 end
 puts # blank line
 
@@ -177,20 +184,20 @@ puts # blank line
 collection = "Wrap-Around Dress"
 
 designer = case collection
-   when "Chiffon Evening Gown" then "ALBERTA FERRETTI"
-   when "Poplin Dress" then "CHLOE"
-   when "Wrap-Around Dress" then "DVF"
-   when "Essential Line" then "DKNY"
-   when "Baguette Handbag" then "FENDI"
-   when "Berkin Handbag" then "HERMES"
-   when "Pink Silk Pantsuit" then "J.CREW"
-   when "Conical Bra" then "JEAN PAUL GAULTIER"
-   when "Black Nylon Bag" then "KATE SPADE"
-   when "Jap-Wrap" then "KENZO"
-   else "Unknown"
+  when "Chiffon Evening Gown" then "ALBERTA FERRETTI"
+  when "Poplin Dress" then "CHLOE"
+  when "Wrap-Around Dress" then "DVF"
+  when "Essential Line" then "DKNY"
+  when "Baguette Handbag" then "FENDI"
+  when "Berkin Handbag" then "HERMES"
+  when "Pink Silk Pantsuit" then "J.CREW"
+  when "Conical Bra" then "JEAN PAUL GAULTIER"
+  when "Black Nylon Bag" then "KATE SPADE"
+  when "Jap-Wrap" then "KENZO"
+  else "Unknown"                               
 end
-
 puts "The " + collection  + " is signature to "  + designer
+puts # blank 
 
 ########################################################################################
 puts "class :::\\:::\\" *8
@@ -240,7 +247,6 @@ class Yo_girlfriend
   def hello_there
     puts "Yo, " + @name + "!"
   end
-
 end
 
 hi = Yo_girlfriend.new( "Girlfriend" )
@@ -256,30 +262,30 @@ class Song
   end
   
   def to_s
-    puts "Song: #{@name}--#{@artist} (#{@duration})"
+    puts "Song: #{@name}--#{@artist} (#{@duration} min)"
   end
 end
-aSong = Song.new("Respect", "Aretha Franklin", 260)
+aSong = Song.new("Respect", "Aretha Franklin", 2.60)
 aSong.to_s
-puts #
+puts # blank
 
 # Ex: 4
 class Student
-   @@no_of_students=0 # class variables
-   def initialize(id, name, addr)
-      @stud_id=id
-      @stud_name=name
-      @stud_addr=addr
-   end
-   def display_details()
-      puts "Student id #@stud_id"
-      puts "Student name #@stud_name"
-      puts "Student address #@stud_addr"
-    end
-    def total_no_of_students()
-       @@no_of_students += 1
-       puts "Total number of students: #@@no_of_students"
-    end
+  @@no_of_students=0 # class variables
+  def initialize(id, name, addr)
+    @stud_id=id
+    @stud_name=name
+    @stud_addr=addr
+  end
+  def display_details()
+    puts "Student id #@stud_id"
+    puts "Student name #@stud_name"
+    puts "Student address #@stud_addr"
+  end
+  def total_no_of_students()
+    @@no_of_students += 1
+    puts "Total number of students: #@@no_of_students"
+  end
 end
 
 # Create Objects
@@ -291,6 +297,7 @@ cust1.display_details()
 cust1.total_no_of_students()
 cust2.display_details()
 cust2.total_no_of_students()
+puts # blank
 
 ########################################################################################
 puts "def :::\\:::\\" *8
@@ -301,7 +308,7 @@ def purchase(arg1)
 @thing = arg1
   puts "The price for the #{@thing} has been approved."
 end
-puts purchase("yacht")
+puts purchase("iPad")
 
 ########################################################################################
 puts "defined? :::\\:::\\" *5
@@ -311,7 +318,7 @@ puts "defined? :::\\:::\\" *5
 # defined. THen it returns a description string of the expression, or 'nil' if the expression 
 # isn't defined.
 
-# Ex: 1
+# Ex: 1 - Run this in IRB
 grl_action_figure = 42
 defined? grl_action_figure    # => "local-variable"
 defined? $_                   # => "global-variable"
@@ -329,6 +336,7 @@ defined? super     # => nil (if it cannot be)
 # Ex: 4
 defined? yield    # => "yield" (if there is a block passed)
 defined? yield    # => nil (if there is no block)
+puts #blank line
 
 ########################################################################################
 puts "do :::\\:::\\" *5
@@ -414,7 +422,8 @@ puts "END :::\\:::\\" *5
 # 14. END
 # Code, enclosed in { code }, will be declared to be called at the end of the program.
 
-END { puts "Cheerio, see you next time!"} # This will run at the end of the program/
+END { puts "Cheerio, see you next time!"} # This will run at the end of the program.
+puts #blank
 
 ########################################################################################
 puts "end :::\\:::\\" *5
@@ -500,16 +509,92 @@ puts # blank
 ########################################################################################
 puts "in :::\\:::\\" *5
 # 19. in
+# in extension to object.
+
+class Object
+  # Returns true if the object sent #in is included in the argument list.
+  #
+  # Using in like this avoids accidental assignment, like .eql?, but unlike .eql?
+  # has the same semantics as ==, which is often idea. 
+  #
+  def in(*ary)
+    ary.include?(self)
+  end
+  color = []
+  # Usage in conditionals:
+  #
+     if 1.in 1, 2, 3
+       puts "1 was included"
+     end
+  
+     if "x".in "xyz"
+       puts "x was included"
+     end
+  
+     if color.in :white, :gray, :black
+       puts "#{color} isn\'t a color."
+     end
+  
+  # It can also be used a safe alternative to ==.
+  #
+     if 1.in 1.0
+       puts "1 == 1.0 #=> true"
+     end
+  #
+end
+
+puts # blank  
 
 ########################################################################################
 puts "module :::\\:::\\" *5
 # 20. module
-# Defines a module; closes with end.
+# Defines a module; closes with end. A 'module' is a collection of methods classes and constants.
+# The methods in a module maybe instance methods or module methods. 
+# Instance methods appear as methods in a class when the module is included, module methods do not.
+# Modules provide a namespace and prevent name clashes and theyi mplement the 'mixin' facility
+# By defining a 'namespace' they create a special space wheteby they can exist without having to 
+# clash with other methods and constants.
+
+module Week
+  FIRST_DAY = "Sunday"
+  def self.weeks_in_month
+    puts "You have four weeks in a month"
+  end
+  def self.weeks_in_year
+    puts "You have 52 weeks in a year"
+  end
+  end
+
+class Decade
+  include Week
+  @@no_of_yrs=10
+	def no_of_months
+    puts Week::FIRST_DAY
+    number=@@no_of_yrs * 12
+    puts number
+	end
+end
+
+d1=Decade.new
+puts Week::FIRST_DAY
+Week.weeks_in_month
+Week.weeks_in_year
+d1.no_of_months    
+puts # blank
 
 ########################################################################################
 puts "next :::\\:::\\" *5
 # 21. next
-# Jumps before a loop's conditional.
+# Jumps before a loop's conditional. Jumps to next iteration of the most internal loop. Terminates execution of a block if called within a block (with yield or call returning nil).
+
+# Ex: 1
+for i in 0..10
+   if i < 5 then
+      next
+   end
+   puts "Value of local variable is #{i}"
+end
+puts # blank
 
 ########################################################################################
 puts "nil :::\\:::\\" *5
@@ -548,17 +633,76 @@ puts # blank
 ########################################################################################
 puts "not :::\\:::\\" *5
 # 23. not
-# Logical operator; same as !.
+# Logical operator; same as !. Called Logical NOT Operator. Use to reverses the logical state of its operand. If a condition is true then Logical NOT operator will make false.
+
+# Ex: 1
+not(a && b)  #false
+
+# Ex: 2
+x, me = "me"
+you = "you"
+x = me
+ not me
+x = you
+puts x
+puts # blank
 
 ########################################################################################
 puts "or :::\\:::\\" *5
 # 24. or
 # Logical operator; same as || except or has lower precedence.
 
+# Ex: 1 
+def prompt() 
+  puts "Type in anything.... "
+end
+
+def get_foo(thing)
+  @thing = thing
+  "foo is found here: #{@thing}"
+end
+prompt; get_foo = gets.chomp
+
+foo = get_foo("") or raise "Could not find foo!"  # Comment out all instances of foo and OR will take over by
+# initiating the 'raise' method.
+
+# Ex: 2  
+ruby = "dynamic"
+programming = "ruby"
+
+if ruby == "dynamic" or programming == "mind-bending"
+  puts "|| or"
+end
+
+ruby = "awesome"
+if ruby == "dynamic" or programming == "mind-bending"
+  puts "|| or"
+else
+	puts "sorry!"
+end
+
+if !(ruby == "dynamic" or programming == "mind-bending")
+	puts "nope!"
+end
+puts # blank 
+
 ########################################################################################
 puts "redo :::\\:::\\" *5
 # 25. redo
-# Jumps after a loop's conditional.
+# Jumps after a loop's conditional. Restarts this iteration of the most internal loop, without checking loop condition. Restarts yield or call if called within a block.
+
+# Ex: 1
+limit = 851
+(223..1000000).each do |num|
+  if num.to_i % 2 == 0
+    num = 1.541645637 * num
+    puts num
+    break if num > limit
+    redo
+  end
+end    
+
+puts # blank
 
 ########################################################################################
 puts "rescue :::\\:::\\" *5
@@ -576,26 +720,115 @@ rescue
 else
    puts "a + b is #{a + b}"
 end
+puts # blank
 
 ########################################################################################
 puts "retry :::\\:::\\" *5
 # 27. retry
 # Repeats a method call outside of rescue; jumps to top of block (begin) if inside rescue.
+# If retry appears in rescue clause of begin expression, restart from the beginning of the begin body.
 
+# Ex: 1 A typical pattern would start like this:
+#   begin
+#   do_something # exception raised
+#     rescue
+#      # handles error
+#    retry  # restart from beginning
+#   end            
+
+# Ex: 2
+# Here, you can get a better idea of what both Ensure and Retry are doing:
+
+attempts = 0
+begin
+  make_service_call()
+rescue Exception
+  attempts += 1
+  retry unless attempts > 2
+  # exit -1
+ensure
+  puts "ensure! #{attempts}"
+end
+
+# Try this gem out, it's suppose to be take care of the retry situations nicely,
+# thier example is as follows:  http://retry.rubyforge.org/
+
+# THIS IS not eveluationg correctly. Ask womone tomorrow!
+puts # blank
+
+   
 ########################################################################################
 puts "return :::\\:::\\" *5
 # 28. return
-# Returns a value from a method or block. May be omitted.
+# Returns a value from a method or block. May be omitted. The return statement in ruby is used to return one value from a Ruby Method.
+
+# Ex: 1
+def sampling_1
+  return 'Apples', 4+2, [5,4,3,2]
+end
+puts sampling_1.inspect  # ["Apples", 6, [5, 4, 3, 2]]
+
+# Ex: 2
+def sampling_2
+  l = 100
+  m = 200
+  n = 300
+return l, m, n
+end
+var = sampling_2
+puts var.inspect
+
+# Ex: 3
+def sampling3      
+  return 1,2,3
+end         
+puts sampling3
+
+puts # blank
 
 ########################################################################################
 puts "self :::\\:::\\" *5
 # 29. self
-# Current object (invoked by a method).
+# Current object (invoked by a method).  The keyword self in Ruby gives you access to the current object – the object that is receiving the current message.
+
+# Ex: 1
+class Post
+  class << self
+    def print_author
+      puts "The author of all posts is Anna"
+    end
+  end
+end
+
+Post.print_author
+
+puts # blank
 
 ########################################################################################
 puts "super :::\\:::\\" *5
 # 30. super
 # Calls method of the same name in the superclass. The superclass is the parent of this class.
+
+class Song
+  def to_s
+    "Song: #{@name}--#{@artist} (#{@duration})"
+  end
+end
+
+class KaraokeSong < Song
+  def initialize(name, artist, duration, lyrics)
+    super(name, artist, duration)
+    @lyrics = lyrics
+  end
+  def to_s
+      super + " [#{@lyrics}]"
+    end
+end
+
+aSong = KaraokeSong.new("My Way", "Sinatra", 225, "And now, the...")
+puts aSong.to_s	#	"Song: My Way--Sinatra (225) [And now, the...]"
+
+puts # blank
 
 ########################################################################################
 puts "then :::\\:::\\" *8
@@ -614,7 +847,7 @@ def check_sign(number)
   number > 0 ? "#{number} is positive" : "#{number} is negative"
 end
 puts check_sign(-200)
-
+puts # blank
 
 ########################################################################################
 puts "true :::\\:::\\" *5
@@ -624,11 +857,22 @@ puts "true :::\\:::\\" *5
 a = 2
 b = 2
 puts a <= b
+puts # blank
 
 ########################################################################################
 puts "undef :::\\:::\\" *5
 # 33. undef
-# Makes a method in current class undefined.
+# Makes a method in current class undefined. This cancels the method definition. An undef can not appear in the method body
+
+# Ex: 1
+# method_name = 500
+# undef method_name
+
+# The idea is to strip every method from your new class so that every call you make to it ends in #method_missing. That way you can implement a real proxy that just shuffles everything through. 
+
+# Apparently other uses for this is in game design, when say you want a player object to add on a method given a certain situations and then have it taken away once the scope of that situation has been completed.
+# The flexibility of this makes it easier to work with code that needs to be handled differntly at run time pending the scope of an expression.
+puts # blank
 
 ########################################################################################
 puts "unless :::\\:::\\" *5
@@ -646,7 +890,6 @@ class Language
 end
 test = Language.new
 puts test
-
 puts # blank line
 
 # Ex: 2
@@ -656,6 +899,7 @@ unless age>20
  else                   
   puts "woman is older than 20"
 end
+puts # blank
 
 ########################################################################################
 puts "until :::\\:::\\" *5
@@ -685,7 +929,7 @@ until($_ == "q") # $_ represents the last read line
   print "Enter q to quit: "
   $_ = gets.chomp()
 end    
-
+puts # blank
 
 ########################################################################################
 puts "when :::\\:::\\" *5
@@ -1136,20 +1380,18 @@ puts #blank
 # Ex: 7
 h = { "a" => 100, "b" => 200, "c" => 300 }
 puts h.values   # => [100, 200, 300]
+puts # blank
 
 ########################################################################################
 # STRING ESCAPES SEQUENCES  / BACKSLASH NOTATION   
 
 #   \\      : single backslash
-puts %{The fruit-salad includes: apples\\oranges\\peaches\\pears.}   
 puts #blank line     
 
 #   \'      : single quote
-puts %{78% of statistics are \'made\' up on the spot.}   
 puts #blank line     
 
 #   \"      : double quote
-puts %{78% of statistics are \"made up\" on the spot}   
 puts #blank line
 
 #   \a      : bell or alert
@@ -1180,7 +1422,6 @@ puts #blank line
 puts #blank line     
 
 #   \n      : a newline
-puts "this is a\ntwo line string"
 puts #blank line     
 
 #   \nnn    : character in octal value nnn
@@ -1222,73 +1463,182 @@ puts #blank line
 #   ()       : Parentheses are also used to collect the results of pattern matching. 
              # Ruby counts opening parentheses, and for each stores the result of the partial match 
              # between it and the corresponding closing parenthesis.
-             
-             
-             
-             
              # : You can use parentheses to group terms within a regular expression. 
              # Everything within the group is treated as a single regular expression.
              
-#   $        #
+#   $        #  Matches end of line.
 puts "This is line #$."
 
-#   []
+# []  References the element or holds the element set, which is expressed as one singular expression
 
-#   **
 
-#   -(unary)
+# The 'slice' method is an alias for two square brackets: []
+puts '======'
+s = 'My kingdom for a string!'
+puts s.slice(3)          # => 107
+puts s[3]                # => 107
+puts 107.chr             # => "k"
+puts s.slice(3,1)        # => "k"
+puts s[3,1]              # => "k"
+puts s[23,1]             # => "!"
+puts s[24]               # => "nil" 
 
-#   +(unary)
+# If compared to substr in other languages, this may come as a surprise; it returns the value of the character and not the rest of the string. We can do the same using ranges instead of specific indices:
+puts '======'
+s = 'My kingdom for a string!'
+puts s.slice(3..9)
+puts s[0..1] + s[17..22] + s[11..13] + s[15..15] + s[3..9] + s[23..-1]
+puts s.slice(0..-15)
+puts s[17..-1]
 
-#   !
+# Ruby Bitwise Operators:
+puts '======'
+a = 78      #  01001110
+b = 54      #  00110110
+puts (a&b)  #  6
+puts (a|b)  #  126
+puts (a^b)  #  120
+puts (~a)   #  -79
+puts (a<<2) #  312
+puts (a>>2) #  19    
 
-#   ~
+# Ruby Logical Operators:  
+puts '======'
+a = 10
+b = 20
+(a and b)    # is true
+(a or b)     # is true
+(a && b)     # is true
+(a || b)  # is true
+!(a && b)    # is false
+not(a && b)  # is false
 
-#   *
-
-#   /
-
-#   %
-
-#   +
-
-#   -
-
-#   <<
-
-#   >>
-
-#   &
-
-#   |
-
-#   >
-
-#   >=
-
-#   <
-
-#   <=
-
-#   <=>
-
-#   ==
-
-#   ===
-
-#   !=
-
+# Public Instance Methods / String Class Methods
+puts '======'  
 #   =~
+# If an object is a Regexp ( regular expression), the operator matches strings against regular expressions
+s = 'how now brown cow'
+s =~ /cow/
+s =~ /now/    
+s =~ /brown/
+s =~ /dog/        
 
-#   !~
+# Arithmetic Operators:
+puts '======'
+# Arithmetic operators
+puts 3 + 4    # add
+puts 7 - 3    # subtract
+puts 3 * 4    # multiply
+puts 12 / 4   # divide
+puts 12**2    # raise to a power (exponent)
+puts 12 % 7   # modulo (remainder)
+puts '======'
 
-#   &&
+# When you do integer division in Ruby, any fractional part 
+# in the result will be truncated.
+puts 24 / 2       # no problem
+puts 25 / 2       # uh-oh, truncation
+puts 25.0 / 2     # using a float as at least one operand solves it
+puts 25.0 / 2.0   # same when both operands are floats
+puts '======'
 
-#   ||
+# Unary operators
+puts +7 + -5
+puts -20 + 32
+puts -20 - +32
+puts 20 * -8
+puts '======'
 
-#   ..
+# Others
+puts 24.div(2)         # division
+puts (25.0).div(2.0)   # result is integer
+puts 12.modulo(5)      # modulo
+puts 12.modulo(5.0)    # modulo with float
+puts 12.divmod(5)      # return array with quotient, modulus
+puts 12.0.divmod(5.0)  # with float
+puts 12.quo(5)         # return the quotient
+puts 12.remainder(5)   # return the remainder
+puts '======'
 
-#   ...
+# Ruby Comparison Operators:
+# Comparision operators
+puts '======'
 
+# Test two numbers for equality with ==, eql?, !=, or <=>
+puts 12 == 24/2
+puts 24.eql?(12*2)
+puts 12 == 14
+puts 12 != 14
+puts 12 <=> 12
+puts 12 <=> 10
+puts 12 <=> 14
+puts '======'
 
+# Test if two numbers are equal, less than, or greater than each other
+puts 12 < 14      #less than
+puts 12 < 12
+puts 12 <= 12     # less than or equal to
+puts 12.0 > 11.9
+puts 12.0 >= 12   # greater than or equal to
+puts '======'
 
+# the <=> (spaceship operator) returns -1, 0, or 1, 
+# depending on whether the first value is equal to the second (0), 
+# less than the second (-1), or greater than the second (1).
+puts 1 <=> 2
+puts 1 <=> 1
+puts 2 <=> 1
+puts '======'
+
+# The === test if a value is in a range
+puts (10...14) === 9
+puts (10...14) === 10
+puts (10...14) === 12
+puts (10...14) === 14
+puts (10...14) === 15
+puts '======' 
+
+# Ruby Assignment Operators:
+# Assignment operators
+puts '======'
+
+x = 37         # assignment
+puts x += 10   # abbreviated assignment add
+puts x -= 10   # abbreviated assignment subtract
+puts x *= 2    # abbreviated assignment multiply
+puts x /= 2    # abbreviated assignment divide
+puts x %= 5    # abbreviated assignment modulus
+puts x **= 3   # abbreviated assignment exponent
+puts '======'
+
+# Ruby Ternary operator:
+# result = condition ? true_value : false_value
+toppings = 4
+price = toppings > 3 ? 5.99 : 4.99
+puts price
+
+age = 10
+type = age < 18 ? "child" : "adult"
+puts "You are a " + type
+
+# Or...
+puts "You are a " + (age == 18 ? "child" : "adult")
+
+# Ternary operator alternative
+type = 'child' if age < 18
+type = 'adult' unless age < 18
+puts "You are a " + type 
+
+# Ranges as Sequences:
+(1..5)        #==> 1, 2, 3, 4, 5
+(1...5)       #==> 1, 2, 3, 4
+('a'..'d')    #==> 'a', 'b', 'c', 'd'
+$, =", "   # Array value separator
+range1 = (1..10).to_a
+range2 = ('bar'..'bat').to_a
+
+puts "#{range1}"
+puts "#{range2}"
+      
+      
+      
