@@ -1,5 +1,6 @@
 # Exercise 39: Hashes, Oh Lovely Hashes
-# Ruby calls them "hashes", other languages call them, "Dictionaries". I tend to use both names, but it doesn't matter. What does matter is what they do when compared to Arrays. You see, a Array lets you do this: 
+# Ruby calls them "hashes", other languages call them, "Dictionaries". I tend to use both names, but it doesn't matter. 
+# What does matter is what they do when compared to Arrays. You see, a Array lets you do this: 
 
 # Ex: Of what Arrays do:
 
@@ -94,8 +95,6 @@ end
 # Given a set of strings, calculate the set of unambiguous abbreviations for those strings, and return a hash where the keys 
 # are all the possible abbreviations and the values are the full strings.
 
-
-
 # puts every city in state
 puts '-' * 10                                       # Some dashes for decoration...
 for abbrev, city in cities                          # In the cities hash, loop through all the values of the city and identify them by abbreviation
@@ -125,7 +124,211 @@ puts "The city for the state 'TX' is: %s" % city    # puts the formatted string 
 
 ################################################################################################################################
 # Extra Credit
-#  Do this same kind of mapping with cities and states/regions in your country, or or some other country.
+# Do this same kind of mapping with cities and states/regions in your country, or or some other country.
 # Go find the Ruby documentation for Hashes (a.k.a. Hash) and try to do even more things to them.
-# Find out what you can't do with Hashes. A big one is that they do not have order, so try playing with that.
 
+regions = {                           
+    'North West' => 'NW',
+    'North East' => 'NE',
+    'South West' => 'SW',
+    'South East' => 'SE',
+    'Central' => 'C'
+}
+
+# The Hash 'cities' creates a mapping from the KEY string literal of city to the VALUE string literal of some cities in them 
+cities = {
+    'Nord-Pas-de-Calais' => 'Calais',
+    'Poitou-Charentes' => 'La Rochelle',
+    'Aquitaine' => 'Bordeaux',
+    'Midi-Pyrenees' => 'Lourdes',
+    'Rhone-Alpes' => 'Lyon',
+    'Ile-de-France' => 'Paris',
+    'Franche-Comte' => 'Lure',
+    }
+
+target_cities = {
+    'NW' => 'Calais',
+    'NE' => 'La Rochelle',
+    'SW' => 'Bordeaux',
+    'SE' => 'Lyon',
+    'C' => 'Paris',
+    }  
+
+# Here we add some more keys and values into the hash cities
+cities['Nord-Pas-de-Calais'] = 'Lille'
+
+# prints out some cities
+puts '-' * 10                                                  
+puts "The capital of France is: ", cities['Ile-de-France']     
+puts "The North of France has: ", cities['Aquitaine']          
+puts "The Central West of France has: ", cities['Poitou-Charentes']   
+puts "The Central East of France has: ", cities['Franche-Comte']   
+puts "The South West of France has: ", cities['Aquitaine']     
+puts "The South East of France has: ", cities['Rhone-Alpes']   
+puts "The South of France has: ", cities['Midi-Pyrenees']      
+
+# do it by using the state then cities dict
+puts '-' * 10                                        
+puts "Rhone-Alpes has: ", cities['Rhone-Alpes']   
+puts "Ile-de-France has: ", cities['Ile-de-France'] 
+
+# loops through all values of cities, places then in the 'value' variable and prints them
+puts '-' * 10                                        
+cities.each_value {|value| puts value }
+
+# here we print out the key(s) of the Hash in several different ways:
+puts '-' * 10             # One Way   
+puts cities.key('Paris')
+puts ' -- ' * 10          # Second Way
+puts cities.keys
+puts ' --- ' * 10         # Third Way
+cities.each_key {|keys| puts keys }
+    
+###########################################################################################################################3
+# puts every state abbreviation
+puts '-' * 10                                       
+for region, abbrev in regions                        
+    puts "%s is abbreviated %s" % [region, abbrev] 
+end
+
+# The abbrev public methods
+# Given a set of strings, calculate the set of unambiguous abbreviations for those strings, and return a hash where the keys 
+# are all the possible abbreviations and the values are the full strings.
+
+###########################################################################################################################3
+# puts every city in state
+
+puts '-' * 10                                      
+for abbrev, city in cities                          
+    puts "The region %s has the city %s" % [abbrev, city]      
+end
+
+# now do both at the same time
+puts '-' * 10                                          
+for region, abbrev in regions                         
+  puts "%s region is abbreviated %s and has the city %s" % [region, abbrev, target_cities[abbrev]]   
+end
+
+puts '-' * 10                                       
+city = cities['Berlin']                          
+
+if not city                                      
+    puts "Sorry, Berlin is in Germany."
+end
+
+# get a city with a default value
+city = cities['BE'] || 'Does Not Exist'
+puts "The city for the country 'BE' is: %s" % city
+
+###########################################################################################################################3
+# Find out what you can't do with Hashes. A big one is that they do not have order, so try playing with that.
+# Hashes are placed in as you create them, and they get listed as they are ordered. That being said, merging two hashes means the index 
+# or original location of the original hash key and value is replaced with the new value, but its ordering in the hash is preserved.
+
+# EX 3 Here's another example of a hash and how we merge the two
+
+puts '-' * 10
+more = { "a" => 100, "b" => 200 }        # the more hash is defined with two keys and values
+even_more = { 'c' => 300, "d" => 400 }   # the even_more is defined with two keys and values
+puts more.merge(even_more)               # And now we merged the two hashes and we get all of them together
+puts more.merge(even_more).sort          # Now we sort thru the two hashes and the print on separate lines
+
+###########################################################################################################################3
+# EX 4 Here's another example of a hash in a class 
+
+puts '-' * 10
+class Book
+  attr_reader :author, :title
+
+  def initialize(author, title)
+    @author = author
+    @title = title
+  end
+
+  def ==(other)
+    self.class === other and
+      other.author == @author and
+      other.title == @title
+  end
+
+  alias eql? ==
+
+  def hash
+    @author.hash ^ @title.hash # XOR
+  end
+end
+
+book1 = Book.new 'matz', 'Ruby in a Nutshell'
+book2 = Book.new 'matz', 'Ruby in a Nutshell' 
+
+author = {}
+puts author[book1] = 'Matz'
+
+title = {}
+puts author[book1] = 'Ruby in a Nutshell'
+
+reviews = {}
+
+puts reviews[book1] = 'Great reference!'
+puts reviews[book2] = 'Nice and compact!'
+
+reviews.length #=> 1
+puts # blank
+
+#################################################################################################################################
+# Ex: 5, Here's yet another way to see the use of a Hash in a class
+
+puts '-' * 10    
+class User < Hash
+  def initialize(attrs)
+    attrs.each do |k, v|
+      self[k] = v
+    end
+  end
+
+  def []=(k, v)
+    unless respond_to?(k)
+      self.class.send :define_method, k do
+        self[k]
+      end
+    end
+
+    super
+  end
+end
+
+u = User.new(:name => 'Karen')
+puts u.name
+u[:name] = 'Anna'
+puts u.name
+
+
+#################################################################################################################################
+# Ex: 6, Here's yet another way to see the use of a Hash and some of it's Built-In Methods
+
+puts '-' * 10   
+$, = ", "
+months = Hash.new( "month" )    # Here we're creating a hash with a Class Method. So now, the object months is an instance of the Class method
+
+months = {"1" => "January", "2" => "February"}   # Here we create a hash that is equal to months... 
+ 
+keys = months.keys              # Then we say that the 'keys' variable is a instance of the object months, defined even more so by the method keys,
+                                # which is a built-in method defining the return value. So 'keys' will return the keys in the object months                  
+
+puts "#{keys}"                  # Then we simply print the keys variable
+
+puts " -------- "
+puts months.values              # Then we print out the values
+
+puts " -- "
+puts months.to_s                # Then we print out the hash to a string
+
+puts " -- "
+puts months.to_a                # Then we print out the hash to a list 
+
+puts " -- "
+months = {"1" => "January", "2" => "February", "3" => "March", "4" => "April", "5" => "May", "6" => "June", "7" => "July", "8" => "August"}   
+puts months.sort                # Then we sort the hash, which is really producting
+
+puts " -- "
+puts months.length              # Then we return the length of the hash
