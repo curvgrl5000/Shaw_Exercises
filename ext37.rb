@@ -492,7 +492,7 @@ puts # blank
 ########################################################################################
 puts "for :::\\:::\\" *5
 # 18. for
-# Begins a for loop; used with in. A special Ruby keyword that indicates the beginning of the loop. It's an example of how you can get more done with tedius tasks.
+# Begins a 'for' loop; used with in. A special Ruby keyword that indicates the beginning of the loop. It's an example of how you can get more done with tedius tasks.
 
 # Ex: 1
 for current_iteration_number in 1..10 do   # here we're using a range that defines the variable and then 'do' activates the value gathering
@@ -509,7 +509,7 @@ puts # blank
 ########################################################################################
 puts "in :::\\:::\\" *5
 # 19. in
-# in extension to object.
+# in is an extension to object.
 
 class Object
   # Returns true if the object sent #in is included in the argument list.
