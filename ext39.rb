@@ -119,7 +119,7 @@ end
 
 # get a city with a default value
 city = cities['TX'] || 'Does Not Exist'             # the variable 'city' is equal to the return value of the hash: 'cities' & key 'TX' or we provice an excemption: 
-                                                    # 'Does Not Exist', a string literal
+                                                    # with the pipe symbol that means OR, 'Does Not Exist', a string literal
 puts "The city for the state 'TX' is: %s" % city    # puts the formatted string and it's keys
 
 
