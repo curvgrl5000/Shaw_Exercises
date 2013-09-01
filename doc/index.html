@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Shaw_Excercises</title>
+    <link href="style.css" rel="stylesheet" />
+    <link href='http://fonts.googleapis.com/css?family=Shanti:400|PT+Sans:700,700italic' rel='stylesheet' type='text/css'>
+</head>
+<body class='literate'>
+  <div id='all'>
+
+
+
+<hgroup class="header"><h1 id="shaw_excercises">Shaw_Excercises</h1>
+<h1 id="exercise_10_what_was_that">Exercise 10: WHAT WAS THAT?</h1></hgroup><p class=" brief">\n  the back-slash n: What these characters do is create an "escape sequence". Different "escape sequences" do different things.</p>
+
+<p>The escape sequence "\n" basically breaks a string into multiple lines by inserting a "new line" character at that point in the string</p>
+
+<pre class=" lang- prettyprint"><code>"I am 6'2\" tall." # escape  double-quote inside string
+'I am 6\'2" tall.' # escape single-quote inside string
+</code></pre>
+<pre class=" lang- prettyprint right"><code>tabby_cat = "\tI'm tabbed in cuz I'm a tabby cat." # \t  So the backslash with a t is a tab
+persian_cat = "I'm split\non a line cuz I'm a persian cat." # \n  And the backslash with an n is new line 
+backslash_cat = "I'm  \\ a \\ backslashed cat." # \\ is just a way to introduce another symbol and in this case its the character of a backslash.
+</code></pre>
+
+<p>Some commonly used escape sequences:</p>
+
+<p>\" - double quote
+\ - single backslash
+\a - bell/alert
+\b - backspace
+\r - carriage return
+\n - newline
+\s - space
+\t - tab</p>
+
+<br class="post-pre">
+
+<section class=" after-pre h3 why_would_you_need_to_escape_a_exclamation_point_since_it_escapes_itself"><h3 id="why_would_you_need_to_escape_a_exclamation_point_since_it_escapes_itself" class=" after-pre">Why would you need to escape a exclamation point, since it escapes itself?</h3>
+<pre class=" lang- prettyprint right"><code>excited_cat = "I'm  \! a \! excited cat." # \\ is just a way to introduce another symbol and in this case its the character of an exclamation. 
+</code></pre>
+
+<br class="post-pre">
+
+</section><section class=" after-pre h1 the_variable_fatcat_is_set_to_a_heredoc_equal_to_the_contents_of_fatcat_list"><h1 id="the_variable_fatcat_is_set_to_a_heredoc_equal_to_the_contents_of_fatcat_list" class=" after-pre">the variable fat<em>cat is set to a heredoc equal to the contents of FAT</em>CAT_LIST</h1>
+
+<p>fat<em>cat = &lt;&lt;FAT</em>CAT<em>LIST
+I'll do a list for a fat cat
+\t* Fat cat food
+\t* Fat fishies
+\t* Catnip\n\t* Grass
+FAT</em>CAT_LIST</p>
+
+</section><section class=" h1 the_variable_sillycat_is_set_to_a_heredoc_equal_to_the_contents_of_sillycat_list"><h1 id="the_variable_sillycat_is_set_to_a_heredoc_equal_to_the_contents_of_sillycat_list">the variable silly<em>cat is set to a heredoc equal to the contents of silly</em>cat_list</h1>
+
+<p>silly<em>cat = &lt;&lt;silly</em>cat<em>list
+I'll do a list for a silly cat
+\t* Kitties are silly
+\t* Silly fishies are eaten by silly kitties
+\t* Catnip is the same as...\n\t* Silly Grass
+silly</em>cat_list</p>
+
+<p>puts tabby<em>cat # 'puts' method prints variable 'tabby</em>cat', which contains an escape sequence to be tabbed in
+puts persian<em>cat # 'puts' method prints variable 'persian</em>cat', which contains an escape sequence to split the line on two lines
+puts backslash<em>cat # 'puts' method prints variable 'backslash</em>cat', which contains escape sequences to print backslashes between the characters
+puts excited<em>cat # 'puts' method prints variable 'excited</em>cat', which contains escape sequences to print exclamations between the characters
+puts fat<em>cat # 'puts' method prints variable 'fat</em>cat', which will print the contents of the HEREDOC 
+puts silly<em>cat # 'puts' method prints variable 'silly</em>cat' which inherits the paragraph which works in lowercase as well, however, it is best practices to use all caps for HEREDOCS</p>
+
+</section><section class=" h1 testing_1_2_3"><h1 id="testing_1_2_3">Testing 1 2 3</h1>
+<pre class=" lang- prettyprint right"><code>print &lt;&lt;PARAGRAPH
+I think I will create another list:
+\t* Some weird stuff 
+\t* Fizzy stuff
+\t* Cookie\n\t\t* Dough
+PARAGRAPH
+</code></pre>
+
+<br class="post-pre">
+
+<p class=" after-pre">This showcases two things, one that I can name the inherited block anything I want, in this case it's MY<em>TEST</em>THAT<em>I</em>NAMED<em>FATTER</em>CAT, and how inheritance is passed through a variable in yet another way #What does this mean?</p>
+
+<p>fatter<em>cat = &lt;&lt;MY</em>TEST<em>THAT</em>I<em>NAMED</em>FATTER<em>CAT
+Yet another to do list for an even fatter cat:
+\t* Kitty stuff and fatter cat 
+\t* Shrimp and Tuna
+\t* Cat Toys
+\t* Catnipped
+MY</em>TEST<em>THAT</em>I<em>NAMED</em>FATTER_CAT</p>
+
+<section class=" h3 puts_method_prints_the_variable_fatter_cat"><h3 id="puts_method_prints_the_variable_fatter_cat">'puts' method prints the variable 'fatter_cat'</h3>
+<pre class=" lang- prettyprint right"><code>puts fatter_cat 
+</code></pre>
+
+<br class="post-pre">
+
+</section><section class=" after-pre h3 puts_method_prints_the_string_with_the_variable_tabbycat_that_is_tabbed_in_and_the_variable_persiancat_that_is_split_the_escape_sequence_r_means_a_return_carriage_and_the_variable_fat_cat_returns_a_paragraph_with_it_s_first_line_tabbed_in"><h3 id="puts_method_prints_the_string_with_the_variable_tabbycat_that_is_tabbed_in_and_the_variable_persiancat_that_is_split_the_escape_sequence_r_means_a_return_carriage_and_the_variable_fat_cat_returns_a_paragraph_with_it_s_first_line_tabbed_in" class=" after-pre">'puts' method prints the string with the variable 'tabby<em>cat' that is tabbed in, and the variable 'persian</em>cat' that is split, the escape sequence '\r' means a return carriage, and the variable 'fat_cat' returns a paragraph with it's first line tabbed in.</h3>
+
+</section><section class=" h3 the_r_escape_sequence_will_return_to_the_beginning_of_the_line_and_type_over_it_so_if_there_are_more_characters_in_the_original_line_you_will_see_them_at_the_end_of_your_new_line"><h3 id="the_r_escape_sequence_will_return_to_the_beginning_of_the_line_and_type_over_it_so_if_there_are_more_characters_in_the_original_line_you_will_see_them_at_the_end_of_your_new_line">The \r escape sequence will return to the beginning of the line and type over it, so if there are more characters in the original line, you will see them at the end of your new line</h3>
+
+<p>puts "Yo and hello #{tabby<em>cat} \ #{persian</em>cat} \r #{fat<em>cat} \t\t #{fat</em>cat}"</p></section></section></div>
+  <script type='text/javascript' src='http://cachedcommons.org/cache/prettify/1.0.0/javascripts/prettify-min.js'></script>
+  <script>prettyPrint();</script>
+</body>
+</html>
