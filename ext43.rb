@@ -1,4 +1,4 @@
-
+# Exercise 43: GOTHONS FROM PLANET PERCAL #25   
 class Game
 
   def initialize(start)  # The initialize method is set by the start parameter
@@ -215,7 +215,7 @@ a_game.play()  # Finally here, we begin the program by noting the financial need
 # 'play' method which is where the 'next_room' is called by the instance variable @start.
 # What is really happening here is that each time an answer is provided we get both the dashes while the condition is true,
 # but more importantly we initiate the the value of the 'next_room' via the call method on the 'room' variable that basicly 
-# re-prompts the start method with all it's quips. IIt keeps the quips around per the logic of the game. 
+# re-prompts the start method with all it's quips. It keeps the quips around per the logic of the game. 
 # For instance, if the user gets all the answers right, then they never see any of the quips, but if they make a mistake
 # then it intializes the next_room > @start > @quip > "one of the strings"
 
