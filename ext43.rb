@@ -2,7 +2,7 @@
 class Game
 
   def initialize(start)  # The initialize method is set by the start parameter
-    @quips = [           # The instance variable '@quips' is passing the array of comma deliminated strings
+    @quips = [           # The instance variable '@quips' is passing the array of comma delimited strings
       "You died.  You kinda suck at this.",  
       "Nice job, you died ...jackass.",
       "Such a luser.",
@@ -32,7 +32,7 @@ class Game
 
   def death()
     puts @quips[rand(@quips.length())]  # Okay so we're printing one of the strings invoked by the 'length' method ( which returns the character length of str ) 
-                                        # from the instance var '@quips', in random order with the help of the 'rand' method and finally passing it to the 'death' method 
+                                        # from the instance var '@quips', in random order with the help of the 'rand' method which defines the 'death' method 
     Process.exit(1)  # The 'Process' module is basically a collection of methods used to manipulate processes, invoked by the 'exit' method called by the integer one.
                      # What's so interesting about this integar is that it's got special meaning and belongs to a library of exit codes. However, many scripts use an 
                      # exit 1 as a general bailout-upon-error. Since exit code 1 signifies so many possible errors, it is not particularly useful in debugging.
@@ -221,7 +221,7 @@ a_game.play()  # Finally here, we begin the program by noting the financial need
 
 # Add cheat codes to the game so you can get past the more difficult rooms. I can do this with two words on one line.
 
-# Instead of having each function print itself, learn about "doc string" style comments. Write the room description as doc comments, and change the runner to print them. CHECK OUT: https://gist.github.com/chendo/2146319
+# Instead of having each function/method print itself, learn about "doc string" style comments. Write the room description as doc comments, and change the runner to print them. CHECK OUT: https://gist.github.com/chendo/2146319
 
 # Once you have doc comments as the room description, do you need to have the function prompt even? Have the runner prompt the user, and pass that in to each function. Your functions should just be if-statements printing the result and returning the next room.
 # CHECK OUT: ext43-2.rb for the added doc comments.
@@ -230,3 +230,4 @@ a_game.play()  # Finally here, we begin the program by noting the financial need
 # http://en.wikipedia.org/wiki/Finite-state_machine
 # They might not make sense but try anyway.
 # I have a bug in this code. Why is the door lock guessing 11 times?
+# It's locking because of the index starting point of guess starts with 0 not 1, so you get 11 tries. To fix it you would define guesses starting at 1.
